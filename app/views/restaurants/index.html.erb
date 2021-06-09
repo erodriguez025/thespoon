@@ -1,0 +1,21 @@
+<h1>Nuestros Restaurants</h1>
+
+<h2>Categorías</h2>
+
+<% categories = %w[Rápida Indian Mexicana] %>
+
+<ul>
+  <% categories.each do |category| %>
+  <li><%= category %></li>  
+  <% end %>
+</ul>
+
+<h2>Restaurants</h2>
+
+<ul>
+  <% @restaurants.each do |id, restaurant| %>
+  <li><%= restaurant[:name]%> - <%= restaurant[:address]%></li>  
+  <% end %>
+</ul>
+
+
