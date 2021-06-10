@@ -8,7 +8,23 @@ class RestaurantsController < ApplicationController
   }
 
   def index
-     @restaurants = RESTAURANTS 
+    @restaurants = if params[:food_type].present?
+      RESTAURANTS.select do |id, restaurant|
+        restaurant[:category] == params[:food_type]
+      end
+    else
+      RESTAURANTS
+    end
   end
+
+  def create
+    render plain: "crearía el restaurant #{params[:name]} en la dirección #{params[:address]}"
+  end
+
+  def show
+    @restaurant = RESTAURANTS[params[:id].to_i]    
+  end
+  
+  
   
 end
