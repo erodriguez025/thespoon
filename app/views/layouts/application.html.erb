@@ -13,9 +13,8 @@
   <body>
     <%= yield %>
     <footer>
-      <p>Nosotros</p>
-      <p>Contacto</p>
-
+      <%= link_to "Nosotros", about_path %>
+      <%= link_to "Contacto", contact_path %>
       <p>Now is <%= Time.now %><p>
     </footer>
   </body>
